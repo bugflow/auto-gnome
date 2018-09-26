@@ -1,8 +1,7 @@
 flask
 zappa
-PyGithub
+PyGithub==1.43.2
 requests
 ipaddress
 PyYAML==3.12
-python-dotenv
-envparse==0.2.0
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
