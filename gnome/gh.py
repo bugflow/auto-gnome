@@ -76,7 +76,7 @@ class Issue:
         if not self.repo.milestone_exists(new_milestone):
             self.repo.create_milestone(new_milestone)
         m = self.repo.get_milestone(new_milestone)
-        self._issue.milestone = m._milestone
+        self._issue.edit(milestone=m._milestone)
 
 
 class Repo:
@@ -96,7 +96,8 @@ class Repo:
 
     def update_milestones(self):
         self._milestones = {
-            x.title: Milestone(self._repo, x) for x in self._repo.get_milestones(state='all')
+            x.title: Milestone(self._repo, x)
+            for x in self._repo.get_milestones(state='all')
         }
 
     @property
@@ -114,7 +115,7 @@ class Repo:
             self.create_milestone(title, **kwargs)
 
     def get_config(self):
-        conf_file = self._repo.get_contents('.bugflow/.gnome.yml')
+        conf_file = self._repo.get_contents('.gnome.yml')
         if conf_file:
             return yaml.load(base64.b64decode(conf_file.content))
 

@@ -1,6 +1,7 @@
 import sys
 import abc
 
+
 class Policy(abc.ABC):
     # __metaclass__ =  abc.ABCMeta
     """
@@ -28,10 +29,12 @@ class Policy(abc.ABC):
 from gnome.plugins.verbose_callback_logging import VerboseCallbackLogging
 from gnome.plugins.sorting_hat import SortingHat
 from gnome.plugins.propagate_milestones import PropagateMilestones
+from gnome.plugins.sync_project_milestones import SyncProjectMilestones
 
 # TODO: make a decision about case for config
 MANIFEST = {
     'SortingHat': SortingHat,
     'VerboseCallbackLogging': VerboseCallbackLogging,
-    'propagate_milestones': PropagateMilestones
+    'propagate_milestones': PropagateMilestones,
+    'SyncProjectMilestones': SyncProjectMilestones
 }
