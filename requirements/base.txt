@@ -7,6 +7,6 @@ ipaddress
 # CVE-2017-18342
 # Vulnerable versions: < 4.2b1
 # Patched version: 4.2b1
-PyYAML==4.2b1
+PyYAML==5.4
 
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
